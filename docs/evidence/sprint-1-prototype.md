@@ -2,6 +2,7 @@
 
 
 ## Sprint Goals
+The database is designed to store user information, daily expenses, weekly savings goals, and weekly summaries while reducing duplicated data.
 
 Develop a design for the database and a UI prototype that simulates the key functionality of the system. Test and refine the UI so that it can serve as the model for the next phase of development in Sprint 2.
 
