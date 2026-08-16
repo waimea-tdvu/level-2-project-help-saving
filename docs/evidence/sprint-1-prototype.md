@@ -28,21 +28,22 @@ Develop a design for the database and a UI prototype that simulates the key func
 
 Replace this text with notes regarding the DB design.
 
-![DB Design](screenshots/placeholder.png)
+![DB Design](screenshots/db.png)
 
 
 ### Required Data Input
 
-Replace this text with a description of what data will be input, and where / how it will be obtained.
+The user will put in what they spending for, what type of it and how much was it. 
 
 ### Required Data Output
 
-Replace this text with a description of the outputs for the system - what types of data will be displayed?
+The system will reveal their spending of the week, how much did user saves and target savings.
 
 ### Required Data Processing
 
-Replace this text with a description of how the data will be processed to achieve the desired output(s) - any processes / formulae?
-
+total money = spending x amount
+total spending = sum of every spending x amount
+money left = initial money - spending
 
 ## UI 'Flow'
 
