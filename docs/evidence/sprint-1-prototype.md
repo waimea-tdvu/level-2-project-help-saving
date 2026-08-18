@@ -49,9 +49,11 @@ money left = initial money - spending
 
 The first stage of prototyping was to explore how the UI might 'flow' between states, based on the required functionality.
 
-This Figma demo shows the initial design for the UI 'flow':
+This PenPot demo shows the initial design for the UI 'flow':
 
-**FIGMA FLOW - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT**
+![ui flow v1](screenshots/UI-flow.png)
+
+You can acess the flow [here](https://design.penpot.app/#/view?file-id=3be9e5e1-190f-8090-8008-705aa457ca4e&page-id=3be9e5e1-190f-8090-8008-705aa457ca4f&section=interactions&index=0&share-id=3be9e5e1-190f-8090-8008-7ff68e44b7b2)
 
 ### Testing
 
