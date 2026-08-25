@@ -15,12 +15,12 @@
 #     SEED_DATA = "INSERT INTO name (...)" or None
 #----------------------------------------------------------------------------
 
-class NoteTable:
+class SavingsTable:
 
-    NAME = "note"
+    NAME = "Savings"
 
     SCHEMA = """
-        CREATE TABLE note (
+        CREATE TABLE savings (
             id      INTEGER PRIMARY KEY AUTOINCREMENT,
             title   TEXT NOT NULL,
             body    TEXT,
@@ -30,11 +30,11 @@ class NoteTable:
     """
 
     SEED_DATA = """
-        INSERT INTO note (title, pinned, body)
+        INSERT INTO savings (title, pinned, body)
         VALUES
             ("Welcome!",      1, "This is a demo application using Flask, Jinja and SQLite."),
             ("Shopping List", 0, "Milk\nBread\nEggs\nCheese"),
-            ("Meeting Notes", 0, "Discussed project timeline.\n\nAction items:\n- Review design\n- Update docs"),
+            ("Meeting savings trackers", 0, "Discussed project timeline.\n\nAction items:\n- Review design\n- Update docs"),
             ("Recipe: Pasta", 0, "Ingredients:\n- 500g pasta\n- Tomato sauce\n- Garlic\n\nCook pasta, add sauce, enjoy!"),
             ("Important!",    1, "Remember to backup your database regularly.")
     """
@@ -54,12 +54,12 @@ class NoteTable:
 #     etc.
 # ]
 #
-# Note: The table order is important - Create the tables that have
+# savings : The table order is important - Create the tables that have
 # foreign keys *after* the tables they link to have been created
 #----------------------------------------------------------------------------
 
 TABLES = [
-    NoteTable,
+    SavingsTable,
     # Add more tables here...
 ]
 

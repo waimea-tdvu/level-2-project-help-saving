@@ -33,17 +33,35 @@ Replace this text with notes regarding the DB design.
 
 ### Required Data Input
 
-The user will put in what they spending for, what type of it and how much was it. 
+The user will enter:
+
+What they spent money on.
+The type/category of the expense.
+The amount spent.
+The date of the expense.
+Their weekly savings target.
+Their available or starting amount of money.
 
 ### Required Data Output
 
-The system will reveal their spending of the week, how much did user saves and target savings.
+The system will display:
+
+The user's total spending for the week.
+The amount of money remaining.
+The amount saved.
+The user's weekly savings target.
+Progress towards the savings target.
+A warning when savings are close to or below the target.
+A weekly summary at the end of the week.
 
 ### Required Data Processing
 
 total money = spending x amount
-total spending = sum of every spending x amount
-money left = initial money - spending
+total spending = sum of all expense amount
+money left = initial money - total spending
+money saved = money left
+savings progress = money saved compare to the weekly savings target
+
 
 ## UI 'Flow'
 
@@ -53,15 +71,19 @@ This PenPot demo shows the initial design for the UI 'flow':
 
 ![ui flow v1](screenshots/UI-flow.png)
 
-You can acess the flow [here](https://design.penpot.app/#/view?file-id=3be9e5e1-190f-8090-8008-705aa457ca4e&page-id=3be9e5e1-190f-8090-8008-705aa457ca4f&section=interactions&index=0&share-id=3be9e5e1-190f-8090-8008-7ff68e44b7b2)
+You can acess the flow [here](https://design.penpot.app/#/view?file-id=3be9e5e1-190f-8090-8008-705aa457ca4e&page-id=3be9e5e1-190f-8090-8008-705aa457ca4f&section=interactions&index=0&share-id=c269caa0-e456-818c-8008-88de1439d378)
 
 ### Testing
 
-Replace this text with notes about what you did to test the UI flow and the outcome of the testing.
+The initial UI flow was tested by following the main user tasks step by step. The test focused on whether a user could understand where to start, add an expense, set a savings target, return to the home screen, and view their progress. Make sure it connected
 
 ### Changes / Improvements
 
-Replace this text with notes any improvements you made as a result of the testing.
+-Making the Add Expense button easier to find.
+-Reducing the number of steps required to record an expense.
+-Making the savings target easier to access and edit.
+-Adding clearer navigation between the home screen, expense screen, and weekly summary.
+-Showing the user's savings progress on the main screen.
 
 *IMPROVED FIGMA FLOW - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT*
 
