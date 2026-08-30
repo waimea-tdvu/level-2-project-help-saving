@@ -15,33 +15,73 @@
 #     SEED_DATA = "INSERT INTO name (...)" or None
 #----------------------------------------------------------------------------
 
-class ExpensesTable:
+class MenuTable:
 
-    NAME = "Expenses"
+    NAME = "Menu"
 
     SCHEMA = """
-        CREATE TABLE Expenses (
+        CREATE TABLE Menu (
             id      INTEGER PRIMARY KEY AUTOINCREMENT,
-            bank  INTERGER,
-            current_savings    INTERGER,
-            weekly_targer  INTERGER,
+            bank  INTEGER,
+            current_savings    INTEGER,
+            weekly_target  INTEGER,
             date_week_start DATE
         )
     """
 
     SEED_DATA = """
-        INSERT INTO Expenses (category_id, amount, spend)
+        INSERT INTO Menu ( id, bank, current_savings, weekly_target, date_week_start)
         VALUES
             ("Welcome!",      1, "This is a demo application using Flask, Jinja and SQLite."),
-            ("Bank", 0, "Milk\nBread\nEggs\nCheese"),
-            ("Weekly Target", 0, "Discussed project timeline.\n\nAction items:\n- Review design\n- Update docs"),
-            ("Current Savings", 0, "Ingredients:\n- 500g pasta\n- Tomato sauce\n- Garlic\n\nCook pasta, add sauce, enjoy"),
-            ("Date",    1, "Remember to backup your database regularly.")
+            ("Bank", 100, "$"),
+            ("Weekly Target", 50, "You still good"),
+            ("Current Savings", 40, "Ingredients:\n- 500g pasta"),
+            ("Date",  31/08/2026, "Remember to backup your database regularly.")
     """
 
 # Add more table classes here...
+class CategoryTable:
 
+    NAME = "Category"
 
+    SCHEMA = """
+        CREATE TABLE Category (
+            id  INTEGER PRIMARY KEY AUTOINCREMENT,
+            name    TEXT,
+            icon    TEXT
+        )
+    """
+
+    SEED_DATA = """
+        INSERT INTO Category (id, name, icon)
+        VALUES
+            (1, "Food", 🍔),
+            (2, "Movie", 🎬)
+    """
+
+class ExpensesTable:
+
+    NAME = "Expenses"
+
+    SCHEMA = """
+        CREATE TABLE expenses (
+            id      INTEGER PRIMARY KEY AUTOINCREMENT,
+            category_id  INTEGER,
+            amount INTEGER,
+            spend DECIMAL,
+            expense_date DATE,
+            FOREIGN KEY (category_id) REFERENCES Category(id)
+        )
+    """
+
+    SEED_DATA = """
+        INSERT INTO expenses (id, category_id, amount, spend, expense_date )
+        VALUES
+            (1, 1, 2, 10, 2026/8/31),
+            (2, 2, 1, 8, 2026/8/31),
+            (3, 2, 1, 5, 2026/8/31),
+            (4, 1, 4, 2, 2026/8/31)
+    """
 
 #----------------------------------------------------------------------------
 # Table registry
@@ -59,7 +99,10 @@ class ExpensesTable:
 #----------------------------------------------------------------------------
 
 TABLES = [
-    ExpensesTable,
+    MenuTable,
+    CategoryTable,
+    ExpensesTable
+
     # Add more tables here...
 ]
 

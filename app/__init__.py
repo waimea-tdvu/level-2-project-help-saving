@@ -24,15 +24,15 @@ app = Flask(__name__)
 # Home page - Show all notes
 #-----------------------------------------------------------
 @app.get("/")
-def show_expenses():
+def show_menu():
     with connect_db() as db:
         sql = """
-            SELECT id, title, body, pinned, created
-            FROM note
-            ORDER BY pinned DESC, created DESC
+            SELECT id, bank, current_savings, weekly_target, date_week_start
+            FROM menu
+            ORDER BY current_savings DESC, bank DESC
         """
         params = ()
-        notes = db.execute(sql, params).fetchall()
+        menu = db.execute(sql, params).fetchall()
 
         flash("Test message")
         flash("Test SUCCESS message", "success")
@@ -40,7 +40,7 @@ def show_expenses():
         flash("Test WARNING message", "warning")
         flash("Test ERROR message", "error")
 
-        return render_template("pages/note_list.jinja", notes=notes)
+        return render_template("pages/savings_menu.jinja", menu=menu)
 
 
 #===========================================================
