@@ -15,28 +15,28 @@
 #     SEED_DATA = "INSERT INTO name (...)" or None
 #----------------------------------------------------------------------------
 
-class SavingsTable:
+class ExpensesTable:
 
-    NAME = "Savings"
+    NAME = "Expenses"
 
     SCHEMA = """
-        CREATE TABLE savings (
+        CREATE TABLE Expenses (
             id      INTEGER PRIMARY KEY AUTOINCREMENT,
-            title   TEXT NOT NULL,
-            body    TEXT,
-            pinned  INTEGER DEFAULT 0,
-            created TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            bank  INTERGER,
+            current_savings    INTERGER,
+            weekly_targer  INTERGER,
+            date_week_start DATE
         )
     """
 
     SEED_DATA = """
-        INSERT INTO savings (title, pinned, body)
+        INSERT INTO Expenses (category_id, amount, spend)
         VALUES
             ("Welcome!",      1, "This is a demo application using Flask, Jinja and SQLite."),
-            ("Shopping List", 0, "Milk\nBread\nEggs\nCheese"),
-            ("Meeting savings trackers", 0, "Discussed project timeline.\n\nAction items:\n- Review design\n- Update docs"),
-            ("Recipe: Pasta", 0, "Ingredients:\n- 500g pasta\n- Tomato sauce\n- Garlic\n\nCook pasta, add sauce, enjoy!"),
-            ("Important!",    1, "Remember to backup your database regularly.")
+            ("Bank", 0, "Milk\nBread\nEggs\nCheese"),
+            ("Weekly Target", 0, "Discussed project timeline.\n\nAction items:\n- Review design\n- Update docs"),
+            ("Current Savings", 0, "Ingredients:\n- 500g pasta\n- Tomato sauce\n- Garlic\n\nCook pasta, add sauce, enjoy"),
+            ("Date",    1, "Remember to backup your database regularly.")
     """
 
 # Add more table classes here...
@@ -54,12 +54,12 @@ class SavingsTable:
 #     etc.
 # ]
 #
-# savings : The table order is important - Create the tables that have
+# Expenses : The table order is important - Create the tables that have
 # foreign keys *after* the tables they link to have been created
 #----------------------------------------------------------------------------
 
 TABLES = [
-    SavingsTable,
+    ExpensesTable,
     # Add more tables here...
 ]
 

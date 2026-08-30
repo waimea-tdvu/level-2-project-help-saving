@@ -24,7 +24,7 @@ app = Flask(__name__)
 # Home page - Show all notes
 #-----------------------------------------------------------
 @app.get("/")
-def show_notes():
+def show_expenses():
     with connect_db() as db:
         sql = """
             SELECT id, title, body, pinned, created
