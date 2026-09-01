@@ -32,11 +32,7 @@ class MenuTable:
     SEED_DATA = """
         INSERT INTO Menu ( id, bank, current_savings, weekly_target, date_week_start)
         VALUES
-            ("Welcome!",      1, "This is a demo application using Flask, Jinja and SQLite."),
-            ("Bank", 100, "$"),
-            ("Weekly Target", 50, "You still good"),
-            ("Current Savings", 40, "Ingredients:\n- 500g pasta"),
-            ("Date",  31/08/2026, "Remember to backup your database regularly.")
+            (1, 1000, 200, 250, 30/08/2026)
     """
 
 # Add more table classes here...
