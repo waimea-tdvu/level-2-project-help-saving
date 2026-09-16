@@ -24,7 +24,7 @@ app = Flask(__name__)
 # Home page - Show all notes
 #-----------------------------------------------------------
 @app.get("/")
-def show_menu():
+def show_menu(): 
     with connect_db() as db:
         sql = """
             SELECT id, bank, current_savings, weekly_target, date_week_start
@@ -34,11 +34,11 @@ def show_menu():
         params = ()
         menu = db.execute(sql, params).fetchall()
 
-        flash("Test message")
-        flash("Test SUCCESS message", "success")
-        flash("Test INFO message", "info")
-        flash("Test WARNING message", "warning")
-        flash("Test ERROR message", "error")
+        flash("Welcome to Savings Tracker")
+        # flash("Test SUCCESS message", "success")
+        # flash("Test INFO message", "info")
+        # flash("Test WARNING message", "warning")
+        # flash("Test ERROR message", "error")
 
         return render_template("pages/savings_menu.jinja", menu=menu)
 
