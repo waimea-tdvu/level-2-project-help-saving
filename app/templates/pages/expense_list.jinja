@@ -1,0 +1,36 @@
+{#=====================================================
+  Expense_List
+=====================================================#}
+
+{% extends 'pages/_base.jinja' %}
+
+
+{% block content %}
+    <h2>List of Expenses</h2>
+
+    <a href="/expenses/new">Add Expenses</a>
+    
+    <ul class="expense-list"> 
+     
+    {% for expense in expenses %} 
+
+        <li class="expense"> 
+
+            <span class="id">{{ expense.id }}</span>  
+
+            <span class="category_id">{{ expense.category_id }}</span>  
+            
+            <span class="amount">{{ expense.amount }}</span>  
+
+            <span class="spend">{{ expense.spend }}</span>  
+
+            <span class="date">{{ expense.date }}</span>  
+
+        </li> 
+    
+        {% endfor %}
+
+    </ul>
+
+{% endblock %}
+

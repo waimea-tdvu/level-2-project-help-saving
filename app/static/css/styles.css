@@ -46,6 +46,10 @@ body > header {
     justify-content: space-between;
     padding: 1rem;
 
+    .icon {
+        width: 2rem;
+        height: 2rem;
+    }
     nav {
         display: flex;
         gap: 1rem;

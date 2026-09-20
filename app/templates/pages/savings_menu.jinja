@@ -13,14 +13,13 @@
 
         {% for saving in saving %}
 
-            <div class="saving {{ 'pinned' if saving.pinned }}">
+            <div class="saving">
 
                 <header>
                     <h3>{{ saving.title }}</h3>
-                    {{ "📌" if saving.pinned }}
                 </header>
 
-                <p>{{ saving.body | paragraphs }}</p>
+                <p>{{"hiii"}}</p>
 
                 <footer>
                     Created on {{ saving.created | local | format }}

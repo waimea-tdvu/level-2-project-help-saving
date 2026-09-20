@@ -25,22 +25,36 @@ app = Flask(__name__)
 #-----------------------------------------------------------
 @app.get("/")
 def show_menu(): 
-    with connect_db() as db:
-        sql = """
-            SELECT id, bank, current_savings, weekly_target, date_week_start
-            FROM menu
-            ORDER BY current_savings DESC, bank DESC
-        """
-        params = ()
-        menu = db.execute(sql, params).fetchall()
-
         flash("Welcome to Savings Tracker")
         # flash("Test SUCCESS message", "success")
         # flash("Test INFO message", "info")
         # flash("Test WARNING message", "warning")
         # flash("Test ERROR message", "error")
+        return render_template("pages/savings_menu.jinja")
 
-        return render_template("pages/savings_menu.jinja", menu=menu)
+@app.get("/expense/list")
+
+
+@app.post("/expense/new")
+def expense_list():
+    id = request.form.get("id", "unknow").strip()
+    category_id = request.form.get("category_id", "unknow").strip()  
+    amount = request.form.get("amount", "unknow").strip()
+    spend = request.form.get("spend", "unknow").strip()
+    expense_date = request.form.get("date", "unknow").strip()
+            
+    with connect_db() as db:
+        sql="""
+            INSERT INTO expenses (id, category_id, amount, spend, date)
+            VALUE (?, ?)
+        """
+
+        params = (id, category_id, amount, spend, date)
+        db.execute(sql,params)
+
+        flash(f"Expense {id} added succesfully")
+        return redirect("/expense")
+    print(request.form)
 
 
 #===========================================================
