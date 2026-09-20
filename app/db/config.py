@@ -17,31 +17,31 @@
 
 class MenuTable:
 
-    NAME = "Menu"
+    NAME = "menu"
 
     SCHEMA = """
-        CREATE TABLE Menu (
+        CREATE TABLE menu (
             id      INTEGER PRIMARY KEY AUTOINCREMENT,
             bank  INTEGER,
             current_savings    INTEGER,
             weekly_target  INTEGER,
-            date_week_start DATE
+            date_week_start TEXT
         )
     """
 
     SEED_DATA = """
-        INSERT INTO Menu ( id, bank, current_savings, weekly_target, date_week_start)
+        INSERT INTO menu ( id, bank, current_savings, weekly_target, date_week_start)
         VALUES
-            (1, 1000, 200, 250, 30/08/2026)
+            (1, 1000, 200, 250, "30-08-2026")
     """
 
 # Add more table classes here...
 class CategoryTable:
 
-    NAME = "Category"
+    NAME = "categories"
 
     SCHEMA = """
-        CREATE TABLE Category (
+        CREATE TABLE categories (
             id  INTEGER PRIMARY KEY AUTOINCREMENT,
             name    TEXT,
             icon    TEXT
@@ -49,15 +49,15 @@ class CategoryTable:
     """
 
     SEED_DATA = """
-        INSERT INTO Category (id, name, icon)
+        INSERT INTO categories (id, name, icon)
         VALUES
-            (1, "Food", 🍔),
-            (2, "Movie", 🎬)
+            (1, "Food",  "🍔"),
+            (2, "Movie", "🎬")
     """
 
 class ExpensesTable:
 
-    NAME = "Expenses"
+    NAME = "expenses"
 
     SCHEMA = """
         CREATE TABLE expenses (
@@ -65,18 +65,18 @@ class ExpensesTable:
             category_id  INTEGER,
             amount INTEGER,
             spend DECIMAL,
-            date DATE,
+            date TEXT,
             FOREIGN KEY (category_id) REFERENCES Category(id)
         )
     """
 
     SEED_DATA = """
-        INSERT INTO expenses (id, category_id, amount, spend, expense_date )
+        INSERT INTO expenses (id, category_id, amount, spend, date )
         VALUES
-            (1, 1, 2, 10, 2026/8/31),
-            (2, 2, 1, 8, 2026/8/31),
-            (3, 2, 1, 5, 2026/8/31),
-            (4, 1, 4, 2, 2026/8/31)
+            (1, 1, 2, 10, "2026-08-31"),
+            (2, 2, 1, 8,  "2026-08-31"),
+            (3, 2, 1, 5,  "2026-08-31"),
+            (4, 1, 4, 2,  "2026-08-31")
     """
 
 #----------------------------------------------------------------------------

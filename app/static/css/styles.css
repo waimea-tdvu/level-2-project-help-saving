@@ -101,3 +101,13 @@ main > h2 {
     }
 }
 
+.expense-list {
+    width:100%
+    margin-top: 20px
+
+    .th,.td{
+        border: 1px solid
+        padding: 10px
+        text-align: center
+    }
+}

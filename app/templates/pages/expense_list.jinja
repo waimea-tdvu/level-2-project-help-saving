@@ -9,28 +9,43 @@
     <h2>List of Expenses</h2>
 
     <a href="/expenses/new">Add Expenses</a>
-    
-    <ul class="expense-list"> 
-     
-    {% for expense in expenses %} 
+        
+        <table class="expense-list"> 
 
-        <li class="expense"> 
+            <thead>
+                <tr>
 
-            <span class="id">{{ expense.id }}</span>  
+                        <th>ID</th>
+                        <th>Catergory</th>
+                        <th>Amount</th>
+                        <th>Spend</th>
+                        <th>Date</th>
+                </tr>
+            </thead>
 
-            <span class="category_id">{{ expense.category_id }}</span>  
-            
-            <span class="amount">{{ expense.amount }}</span>  
+        <tbody>
+                {% for expense in expenses %} 
 
-            <span class="spend">{{ expense.spend }}</span>  
+                <tr>
 
-            <span class="date">{{ expense.date }}</span>  
+                    <td>{{ expense.id }}</td>  
 
-        </li> 
-    
-        {% endfor %}
+                    <td>{{ expense.category_id }}</td>  
+                    
+                    <td>{{ expense.amount }}</td>  
 
-    </ul>
+                    <td>{{ expense.spend }}</td>  
 
+                    <td>{{ expense.date }}</td>  
+
+                    <p><a href="/expense/{{ expense.id }}/delete">Delete</a></p>
+                </tr> 
+                {% else %}
+
+                        <p> Start Tracking Your Expense! </p>
+            {% endfor %}
+
+        </tbody>
+    </table>
 {% endblock %}
 

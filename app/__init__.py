@@ -1,6 +1,6 @@
 #===========================================================
-# PROJECT NAME HERE
-# By YOUR NAME HERE
+# PROJECT NAME HERE  Savings Tracker
+# By YOUR NAME HERE  Trinh Vu
 #===========================================================
 
 from flask import Flask, request, session, render_template, flash, redirect, send_file, make_response
@@ -33,27 +33,36 @@ def show_menu():
         return render_template("pages/savings_menu.jinja")
 
 @app.get("/expense/list")
+def show_expense_list():
+    with connect_db() as db:
+        sql = """
+            SELECT id, category_id, amount, spend, date
+            FROM expenses
+        """
+        params = ()
+        expenses = db.execute(sql,params).fetchall()
 
+        return render_template("pages/expense_list.jinja", expenses=expenses)
 
 @app.post("/expense/new")
-def expense_list():
+def get_expense():
     id = request.form.get("id", "unknow").strip()
     category_id = request.form.get("category_id", "unknow").strip()  
     amount = request.form.get("amount", "unknow").strip()
     spend = request.form.get("spend", "unknow").strip()
-    expense_date = request.form.get("date", "unknow").strip()
+    date = request.form.get("date", "unknow").strip()
             
     with connect_db() as db:
         sql="""
             INSERT INTO expenses (id, category_id, amount, spend, date)
-            VALUE (?, ?)
+            VALUE (?, ?, ?, ?, ?)
         """
 
         params = (id, category_id, amount, spend, date)
         db.execute(sql,params)
 
         flash(f"Expense {id} added succesfully")
-        return redirect("/expense")
+        return redirect("/expense/list")
     print(request.form)
 
 
