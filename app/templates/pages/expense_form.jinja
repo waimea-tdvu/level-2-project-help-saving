@@ -1,0 +1,29 @@
+{#=====================================================
+  Home page
+=====================================================#}
+
+{% extends 'pages/_base.jinja' %}
+
+
+
+{% block content %}
+
+    <h2>New Expense</h2>
+
+    <form method = "post" action="/expense/new">
+        <label>
+            Name
+            <input type = "text" name="ID" required>
+        </label>
+    
+        <label>
+            Species
+            <input type = "text" name="Categories" required>
+        </label>
+    
+        <button>Add Expense</button>
+
+    </form>
+
+{% endblock %}
+

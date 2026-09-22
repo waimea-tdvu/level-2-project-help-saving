@@ -7,45 +7,47 @@
 
 {% block content %}
     <h2>List of Expenses</h2>
-
-    <a href="/expenses/new">Add Expenses</a>
         
         <table class="expense-list"> 
 
             <thead>
-                <tr>
+                    <tr>
 
-                        <th>ID</th>
-                        <th>Catergory</th>
-                        <th>Amount</th>
-                        <th>Spend</th>
-                        <th>Date</th>
-                </tr>
+                            <th>ID</th>
+                            <th>Categories</th>
+                            <th>Amount</th>
+                            <th>Spend</th>
+                            <th>Date</th>
+                    </tr>
             </thead>
 
-        <tbody>
-                {% for expense in expenses %} 
+            <tbody>
 
-                <tr>
+                    {% for expense in expenses %} 
 
-                    <td>{{ expense.id }}</td>  
+                    <tr>
 
-                    <td>{{ expense.category_id }}</td>  
-                    
-                    <td>{{ expense.amount }}</td>  
+                        <td>{{ expense.id }}</td>  
 
-                    <td>{{ expense.spend }}</td>  
+                        <td>{{ expense.category_id }}</td>  
+                        
+                        <td>{{ expense.amount }}</td>  
 
-                    <td>{{ expense.date }}</td>  
+                        <td>{{ expense.spend }}</td>  
 
-                    <p><a href="/expense/{{ expense.id }}/delete">Delete</a></p>
-                </tr> 
-                {% else %}
+                        <td>{{ expense.date }}</td>  
 
-                        <p> Start Tracking Your Expense! </p>
-            {% endfor %}
+                        <td>
+                        <a href="/expense/{{ expense.id }}/delete">Delete</a>
+                        </td>
 
-        </tbody>
-    </table>
+                    </tr> 
+
+                {% endfor %}
+            </tbody>
+        </table>
+    <div>    
+        <a href="/expenses/new" class="add-ex">Add Expenses</a> 
+    </div>   
 {% endblock %}
 
