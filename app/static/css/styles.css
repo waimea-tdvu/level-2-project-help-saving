@@ -121,3 +121,22 @@ main > h2 {
     color: black;
     text-decoration: none;
 }
+
+.expense-form {
+    max-width: 50%;
+    margin: 20px auto;
+    padding: 20px;
+    background: var(--back-col-panel);
+    border: 1px solid var(--border-col);
+    border-radius: 10px;
+
+    label {
+        display: block;
+        margin-top: 10px;
+    }
+
+    input{
+        display: block;
+        margin-bottom: 10px;
+    }
+}

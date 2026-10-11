@@ -66,7 +66,7 @@ class ExpensesTable:
             amount INTEGER,
             spend DECIMAL,
             date TEXT,
-            FOREIGN KEY (category_id) REFERENCES Category(id)
+            FOREIGN KEY (category_id) REFERENCES categories(id)
         )
     """
 

@@ -10,18 +10,34 @@
 
     <h2>New Expense</h2>
 
-    <form method = "post" action="/expense/new">
+    <form method = "post" action="/expense/new" class="expense-form">
+        <label>Categories</label>
+        <select name="category_id" required>
+                
+                <option value= "" disabled selected>   Choose category   </option>
+            {% for categories in categories %}
+                <option value="{{ categories.id }}">
+                    {{ categories.name }} {{ categories.icon }}
+                </option>
+            {% endfor %}
+        </select>
+
         <label>
-            Name
-            <input type = "text" name="ID" required>
+            Amount
+            <input type = "number" name="amount" required>
         </label>
     
         <label>
-            Species
-            <input type = "text" name="Categories" required>
+            Spend
+            <input type = "number" name="spend" required>
         </label>
-    
-        <button>Add Expense</button>
+
+        <label>
+            Date
+            <input type = "date" name="date" value="{{ today }}"required>
+        </label>
+
+        <button> Add Expense </button>
 
     </form>
 

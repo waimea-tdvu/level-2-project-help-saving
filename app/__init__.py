@@ -32,6 +32,8 @@ def show_menu():
         # flash("Test ERROR message", "error")
         return render_template("pages/savings_menu.jinja")
 
+
+
 @app.get("/expense/list")
 def show_expense_list():
     with connect_db() as db:
@@ -44,26 +46,33 @@ def show_expense_list():
 
         return render_template("pages/expense_list.jinja", expenses=expenses)
 
+from datetime import date
+
 @app.post("/expense/new")
 def get_expense():
-    id = request.form.get("id", "unknow").strip()
-    category_id = request.form.get("category_id", "unknow").strip()  
-    amount = request.form.get("amount", "unknow").strip()
-    spend = request.form.get("spend", "unknow").strip()
-    date = request.form.get("date", "unknow").strip()
+    category_id = request.form.get("category_id", "").strip()  
+    amount = request.form.get("amount", "").strip()
+    spend = request.form.get("spend", "").strip()
+    date_td = request.form.get("date", "").strip()
             
     with connect_db() as db:
         sql="""
-            INSERT INTO expenses (id, category_id, amount, spend, date)
-            VALUE (?, ?, ?, ?, ?)
+            INSERT INTO expenses (category_id, amount, spend, date_td)
+            VALUES (?, ?, ?, ?)
         """
 
-        params = (id, category_id, amount, spend, date)
+        params = (category_id, amount, spend, date)
+        
         db.execute(sql,params)
 
-        flash(f"Expense {id} added succesfully")
+        flash(f"Expense added succesfully")
+        print(request.form)
         return redirect("/expense/list")
-    print(request.form)
+
+@app.get("/expense/new")
+def show_new_expense():
+    today = date.today().isoformat()
+    return render_template("pages/expense_form.jinja", today=today)
 
 
 #===========================================================
