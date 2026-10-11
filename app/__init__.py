@@ -38,15 +38,33 @@ def show_menu():
 def show_expense_list():
     with connect_db() as db:
         sql = """
-            SELECT id, category_id, amount, spend, date
+            SELECT expenses.id,
+                   expenses.category_id,
+                   categories.name AS category_name,
+                   categories.icon AS category_icon,
+                   expenses.amount,
+                   expenses.spend,
+                   expenses.date
             FROM expenses
+            JOIN categories
+                ON expenses.category_id = categories.id
+            ORDER BY expenses.id
         """
-        params = ()
-        expenses = db.execute(sql,params).fetchall()
+        expenses = db.execute(sql).fetchall()
 
         return render_template("pages/expense_list.jinja", expenses=expenses)
 
 from datetime import date
+
+@app.post("/expense/delete")
+def delete_expense:
+    with connect_db() as db:
+        sql = "DELETE FROM expenses WHERE id=?"
+        params = (expense.id),
+        db,execute(sql,params)
+    `   `
+        flash()
+        return()
 
 @app.post("/expense/new")
 def get_expense():
@@ -57,22 +75,30 @@ def get_expense():
             
     with connect_db() as db:
         sql="""
-            INSERT INTO expenses (category_id, amount, spend, date_td)
+            INSERT INTO expenses (category_id, amount, spend, date)
             VALUES (?, ?, ?, ?)
         """
 
-        params = (category_id, amount, spend, date)
+        params = (category_id, amount, spend, date_td)
         
         db.execute(sql,params)
 
-        flash(f"Expense added succesfully")
-        print(request.form)
+        flash("Expense added succesfully")
         return redirect("/expense/list")
 
 @app.get("/expense/new")
 def show_new_expense():
     today = date.today().isoformat()
-    return render_template("pages/expense_form.jinja", today=today)
+
+    with connect_db() as db:
+        sql = """
+            SELECT id,name, icon
+            FROM categories
+        """
+
+        categories = db.execute(sql).fetchall()
+
+    return render_template("pages/expense_form.jinja", today=today, categories=categories)
 
 
 #===========================================================
