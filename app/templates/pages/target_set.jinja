@@ -1,0 +1,38 @@
+{#=====================================================
+  Home page
+=====================================================#}
+
+{% extends 'pages/_base.jinja' %}
+
+
+{% block content %}
+
+    <h2>Tracker Menu</h2>
+
+    <section id="savings">
+
+        {% for saving in saving %}
+
+            <div class="saving">
+
+                <header>
+                    <h3>{{ saving.title }}</h3>
+                </header>
+
+                <p>{{"hiii"}}</p>
+
+                <footer>
+                    Created on {{ saving.created | local | format }}
+                </footer>
+
+            </div>
+        {% else %}
+
+            <p>You Haven't Start Yet!</p>
+
+        {% endfor %}
+
+    </section>
+
+{% endblock %}
+

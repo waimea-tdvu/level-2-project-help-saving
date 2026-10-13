@@ -56,15 +56,18 @@ def show_expense_list():
 
 from datetime import date
 
-@app.post("/expense/delete")
-def delete_expense:
+@app.get("/expense/<int:expense_id>/delete")
+def delete_expense(expense_id):
     with connect_db() as db:
-        sql = "DELETE FROM expenses WHERE id=?"
-        params = (expense.id),
-        db,execute(sql,params)
-    `   `
-        flash()
-        return()
+        sql = """
+            DELETE FROM expenses
+            WHERE id=?
+        """
+        params = (expense_id),
+        db.execute(sql, params)
+    
+        flash("Delete Successfuly")
+        return redirect("/expense/list")
 
 @app.post("/expense/new")
 def get_expense():

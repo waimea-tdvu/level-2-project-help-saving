@@ -140,3 +140,9 @@ main > h2 {
         margin-bottom: 10px;
     }
 }
+.back_feature {
+    padding: 10px 10px;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 6px;
+}
