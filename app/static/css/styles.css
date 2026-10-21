@@ -146,3 +146,34 @@ main > h2 {
     text-decoration: none;
     border-radius: 6px;
 }
+.saving {
+    width: 100%;
+    max-width: 550px;
+    box-sizing: border-box;
+    margin: auto;
+    padding: 24px;
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+}
+.savings_table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.saving h3{
+    text-align: center;
+    width: 100%;
+}
+.savings_table th,
+.savings_table td{
+        border: 2px solid black;
+        padding: 10px;
+        text-align: left;
+    }
+.savings_table th {
+        width: 35%;
+}
+.savings_table td {
+    width: 50%;
+}

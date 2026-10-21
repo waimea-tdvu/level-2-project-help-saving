@@ -11,28 +11,41 @@
 
     <section id="savings">
 
-        {% for saving in saving %}
+        {% for saving in savings %}
 
             <div class="saving">
-
-                <header>
-                    <h3>{{ saving.title }}</h3>
-                </header>
-
-                <p>{{"hiii"}}</p>
-
-                <footer>
-                    Created on {{ saving.created | local | format }}
-                </footer>
-
+                
+                    <h3>Savings Viewing</h3>
+                
+            <table class="savings_table">
+                    <tbody>
+                        <tr>
+                            <th>Bank</th>
+                            <td>${{ saving.bank }}</td>
+                        </tr>
+                        <tr>
+                            <th>Current Savings</th>
+                            <td>${{ saving.current_savings }}</td>
+                        </tr>
+                        <tr>
+                            <th>Weekly Target</th>
+                            <td>${{ saving.weekly_target }}</td>
+                        </tr>
+                        <tr>
+                            <th>Week Start</th>
+                            <td>{{ saving.date_week_start }}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         {% else %}
 
-            <p>You Haven't Start Yet!</p>
+            <p>You Haven't Start Yet!</p> 
 
         {% endfor %}
-
     </section>
-
+    <div class="menu_image">
+       <img src="/static/images/saving_menu(1).png" alt="Menu Image" class="menu_image(1)"> 
+    </div>
 {% endblock %}
 

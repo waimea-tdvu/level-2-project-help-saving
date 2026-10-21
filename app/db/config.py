@@ -15,12 +15,12 @@
 #     SEED_DATA = "INSERT INTO name (...)" or None
 #----------------------------------------------------------------------------
 
-class MenuTable:
+class SavingsTable:
 
-    NAME = "menu"
+    NAME = "savings"
 
     SCHEMA = """
-        CREATE TABLE menu (
+        CREATE TABLE savings (
             id      INTEGER PRIMARY KEY AUTOINCREMENT,
             bank  INTEGER,
             current_savings    INTEGER,
@@ -30,7 +30,7 @@ class MenuTable:
     """
 
     SEED_DATA = """
-        INSERT INTO menu ( id, bank, current_savings, weekly_target, date_week_start)
+        INSERT INTO savings ( id, bank, current_savings, weekly_target, date_week_start)
         VALUES
             (1, 1000, 200, 250, "30-08-2026")
     """
@@ -95,7 +95,7 @@ class ExpensesTable:
 #----------------------------------------------------------------------------
 
 TABLES = [
-    MenuTable,
+    SavingsTable,
     CategoryTable,
     ExpensesTable
 
