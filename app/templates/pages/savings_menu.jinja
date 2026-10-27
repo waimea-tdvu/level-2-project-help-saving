@@ -6,46 +6,52 @@
 
 
 {% block content %}
+    <div class="dashboard">
 
-    <h2>Tracker Menu</h2>
+    <h2 class= "menu_title">
+        Welcome to<br>
+        Saving and Expense Tracker
+    </h2>
 
-    <section id="savings">
+   <div class="dashboard_content">
+
+   <div class="savings_board">
 
         {% for saving in savings %}
+    
+                    <h3>Targeting</h3>
+                
+                    <p> Current balance: ${{ saving.current_savings }}</p>
 
-            <div class="saving">
-                
-                    <h3>Savings Viewing</h3>
-                
-            <table class="savings_table">
-                    <tbody>
-                        <tr>
-                            <th>Bank</th>
-                            <td>${{ saving.bank }}</td>
-                        </tr>
-                        <tr>
-                            <th>Current Savings</th>
-                            <td>${{ saving.current_savings }}</td>
-                        </tr>
-                        <tr>
-                            <th>Weekly Target</th>
-                            <td>${{ saving.weekly_target }}</td>
-                        </tr>
-                        <tr>
-                            <th>Week Start</th>
-                            <td>{{ saving.date_week_start }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                    <p> Saving this week: ${{ saving.current_savings }}</p>
+
+                    <p>Saving target: ${{ saving.weekly_target }}</p>
+
+                    <img src="/static/images/smile_face.png" alt="Menu Image" class="menu_image">
+
+                    <a href="/target" class="set_target_link"> SET YOUR TARGET?</a>
         {% else %}
 
+            <h3>Set Your Target</h3>
             <p>You Haven't Start Yet!</p> 
 
         {% endfor %}
-    </section>
-    <div class="menu_image">
-       <img src="/static/images/saving_menu(1).png" alt="Menu Image" class="menu_image(1)"> 
+
     </div>
+
+        <div class="start_expense_board">
+            <p> How's your day?</p>
+
+            <p> Do you want to<br>
+                record your daily<br>
+                expense now?
+            </p>
+
+            <a href="/expense/list" class="expense_board_link"> EXPENSE
+            <img src="/static/images/point_left.png" alt="" class="expense_link_icon">
+            </a>
+        </div>
+    </div>
+</div>
 {% endblock %}
 

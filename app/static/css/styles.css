@@ -9,7 +9,7 @@
     --back-col:         #eee;
     --back-col-panel:   #fff;
 
-    --border-col:       #355;
+    --border-col:       rgb(100, 214, 214);
 
     --accent-col:       #e43;
 }
@@ -50,6 +50,7 @@ body > header {
         width: 2rem;
         height: 2rem;
     }
+   
     nav {
         display: flex;
         gap: 1rem;
@@ -101,6 +102,71 @@ main > h2 {
     }
 }
 
+/* Dashboard Menu ------------------------------------------------------*/
+
+.menu_title {
+    text-align: center;
+    font-size: 30px;
+    line-height: 1.35;
+    color: black;
+    margin: 0;
+}
+.dashboard {
+    height: 500px;
+    padding: 16px 8px;
+    box-sizing: border-box;
+}
+.dashboard_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+    margin-top: 10px;
+}
+.savings_board{
+    background-color: var(--back-col-panel);
+    border: 1px solid var(--border-col);
+    border-radius: 10px;
+    padding: 16px;
+    width: 220px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.set_target_link {
+    display: inline-flex;
+    margin-top: 1px;
+    color: var(--accent-col);
+    text-decoration: none;
+}
+.menu_image {
+    display: block;
+    width: 100%;
+    height: 65px;
+    object-fit: contain;
+    margin-top: 10px;
+}
+.start_expense_board{
+    background-color: var(--back-col-panel);
+    border: 1px solid var(--border-col);
+    border-radius: 10px;
+    padding: 16px;
+    width: 220px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.expense_board_link {
+    display: inline-flex;
+    margin-top: 10px;
+    color: var(--accent-col);
+    text-decoration: none;
+}
+.expense_link_icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Expense List-----------------------------------------------*/
+
 .expense-list {
     width: 100%;
     border-collapse: collapse;
@@ -113,14 +179,81 @@ main > h2 {
         text-align: center;
     }
 
-
-.add-ex {
-    position : sticky;
-    bottom : 10px;
-    float : right;
-    color: black;
-    text-decoration: none;
+.saving {
+    width: 100%;
+    max-width: 550px;
+    box-sizing: border-box;
+    margin: auto;
+    padding: 24px;
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
 }
+
+.savings_table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.saving h3{
+    text-align: center;
+    width: 100%;
+}
+
+.savings_table th,
+.savings_table td{
+        border: 2px solid black;
+        padding: 10px;
+        text-align: left;
+    }
+
+.savings_table th {
+        width: 35%;
+}
+
+.savings_table td {
+    width: 50%;
+}
+
+.delete_list{
+    padding: 10px 10px;
+    color: var(--accent-col);
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.expense_list_button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 24px;
+    margin-bottom: 20px;
+}
+.add-ex {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 6px;
+}
+.back_feature_in_list {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 6px;
+}
+.back_feature_in_list,
+.add-ex {
+background-color: var(--border-col);
+}
+
+/* Expense Form---------------------------------------------------------*/
 
 .expense-form {
     max-width: 50%;
@@ -146,34 +279,4 @@ main > h2 {
     text-decoration: none;
     border-radius: 6px;
 }
-.saving {
-    width: 100%;
-    max-width: 550px;
-    box-sizing: border-box;
-    margin: auto;
-    padding: 24px;
-    background: #ffffff;
-    border: 1px solid #d1d5db;
-    border-radius: 10px;
-}
-.savings_table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-.saving h3{
-    text-align: center;
-    width: 100%;
-}
-.savings_table th,
-.savings_table td{
-        border: 2px solid black;
-        padding: 10px;
-        text-align: left;
-    }
-.savings_table th {
-        width: 35%;
-}
-.savings_table td {
-    width: 50%;
-}
+
