@@ -10,7 +10,7 @@
 
     <h2>New Expense</h2>
 
-    <form method = "post" action="/expense/new" class="expense-form">
+    <form method = "POST" action="/expense/new" class="expense-form">
         <label>Categories</label>
         <select name="category_id" required>
                 
@@ -21,7 +21,7 @@
                 </option>
             {% endfor %}
         </select>
-
+        <button class="show_categories_form> Other Categories </button>
         <label>
             Amount
             <input type = "number" name="amount" required>

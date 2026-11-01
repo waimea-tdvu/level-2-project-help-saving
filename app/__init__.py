@@ -40,10 +40,13 @@ def show_menu():
 
     return render_template("pages/savings_menu.jinja", savings=savings)
 
-
+from datetime import date
 
 @app.get("/expense/list")
 def show_expense_list():
+
+    selected_date = request.args.get("date", date.today().isoformat())
+
     with connect_db() as db:
         sql = """
             SELECT expenses.id,
@@ -56,13 +59,16 @@ def show_expense_list():
             FROM expenses
             JOIN categories
                 ON expenses.category_id = categories.id
+            WHERE expenses.date = ?
             ORDER BY expenses.id
         """
-        expenses = db.execute(sql).fetchall()
 
-        return render_template("pages/expense_list.jinja", expenses=expenses)
+        params = (selected_date,)
+        expenses = db.execute(sql, params).fetchall()
 
-from datetime import date
+        return render_template("pages/expense_list.jinja", expenses=expenses, selected_date=selected_date)
+
+
 
 @app.get("/expense/<int:expense_id>/delete")
 def delete_expense(expense_id):

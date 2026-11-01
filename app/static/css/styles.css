@@ -167,6 +167,12 @@ main > h2 {
 
 /* Expense List-----------------------------------------------*/
 
+.date-filter {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
 .expense-list {
     width: 100%;
     border-collapse: collapse;

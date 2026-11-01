@@ -7,7 +7,18 @@
 
 {% block content %}
     <h2>List of Expenses</h2>
-        
+        <form method="GET" action="/expense/list" class="date-filter">
+
+        <label for="date">Choose Date:</label>
+
+        <input
+            type="date"
+            id="date"
+            name="date"
+            value="{{ selected_date }}"
+            onchange="this.form.submit()">
+        </form>
+
         <table class="expense-list"> 
 
             <thead>
