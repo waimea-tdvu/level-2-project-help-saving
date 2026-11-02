@@ -117,6 +117,38 @@ def show_new_expense():
 
     return render_template("pages/expense_form.jinja", today=today, categories=categories)
 
+@app.get("/target")
+def show_target():
+
+    today = date.today().isoformat()
+
+    return render_template(
+        "pages/target_set.jinja",
+        today=today
+    )
+
+@app.post("/target")
+def add_target():
+
+    weekly_target = request.form.get("weekly_target", "").strip()
+    date_week_start = request.form.get("date_week_start", "").strip()
+
+    with connect_db() as db:
+
+        sql = """
+            UPDATE savings
+            SET weekly_target = ?,
+                date_week_start = ?
+            WHERE id = 1
+        """
+
+        params = (weekly_target, date_week_start)
+
+        db.execute(sql, params)
+
+    flash("Weekly target updated successfully!")
+
+    return redirect("/")
 
 #===========================================================
 # Configure the app

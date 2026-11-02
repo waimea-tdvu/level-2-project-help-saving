@@ -286,3 +286,30 @@ background-color: var(--border-col);
     border-radius: 6px;
 }
 
+/* Target Setting Form --------------------------------------------------------------------------*/
+
+.target_board {
+    width: 400px;
+    max-width: 90%;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: var(--back-col-panel);
+    border: 2px solid var(--border-col);
+    border-radius: 12px;
+}
+.target_board h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.target_board form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.target_board input {
+    padding: 10px;
+    border: 1px solid #355;
+    border-radius: 6px;
+}
+.target_board button {
+}

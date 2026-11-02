@@ -7,32 +7,44 @@
 
 {% block content %}
 
-    <h2>Tracker Menu</h2>
+    <h2>Set Your Weekly Target</h2>
 
-    <section id="savings">
+    <div class="target_board">
 
-        {% for saving in saving %}
+        <h3>Add Target This Week</h3>
 
-            <div class="saving">
+        <form method="POST" action="/target">
 
-                <header>
-                    <h3>{{ saving.title }}</h3>
-                </header>
+            <label>Weekly Target ($)</label>
 
-                <p>{{"hiii"}}</p>
+            <input
+                type="number"
+                name="weekly_target"
+                min="1"
+                step="1"
+                placeholder="Enter your target"
+                required
+            >
 
-                <footer>
-                    Created on {{ saving.created | local | format }}
-                </footer>
+            <label>Week Start</label>
 
-            </div>
-        {% else %}
+            <input
+                type="date"
+                name="date_week_start"
+                value="{{ today }}"
+                required
+            >
+            
+            <button>
+                Back
+            </button>
 
-            <p>You Haven't Start Yet!</p>
+            <button>
+                Save Target
+            </button>
 
-        {% endfor %}
+        </form>
 
-    </section>
+    </div>
 
 {% endblock %}
-
