@@ -27,7 +27,13 @@ app = Flask(__name__)
 def show_menu(): 
 
     flash("Welcome to Savings Tracker")
-    
+
+    # Get current week's Monday and Sunday
+    today = date.today()
+    week_start = today - timedelta(days=today.weekday())
+    week_end = week_start + timedelta(days=6)
+
+
     with connect_db() as db:
         sql = """
             SELECT id, bank, current_savings, weekly_target,date_week_start
@@ -35,6 +41,16 @@ def show_menu():
             ORDER BY id
         """
         savings = db.execute(sql).fetchall()
+
+    sql = """
+            SELECT COALESCE(SUM(spend), 0) AS total_expense
+            FROM expenses
+            WHERE date BETWEEN ? AND ?
+        """
+
+        params = (week_start.isoformat(), week_end.isoformat())
+        total_expense = db.execute(sql, params).fetchone()
+
 
     return render_template("pages/savings_menu.jinja", savings=savings)
 

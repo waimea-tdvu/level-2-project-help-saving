@@ -308,6 +308,7 @@ main > h2 {
     border: 1px solid var(--border-col);
     border-radius: 6px;
 }
+
 .target_buttons {
     display: flex;
     justify-content: space-between;

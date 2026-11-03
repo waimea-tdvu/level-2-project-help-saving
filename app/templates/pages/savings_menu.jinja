@@ -38,7 +38,36 @@
         {% endfor %}
 
     </div>
+            <div class="weekly_expense_board">
 
+        <h3>Weekly Expense</h3>
+
+        <p>Total Expense This Week</p>
+
+        <h2>${{ total_expense.total_expense }}</h2>
+
+        <hr>
+
+        <p>Most Expense</p>
+
+        {% if most_expense %}
+
+            <h3>
+                {{ most_expense.category_icon }}
+                {{ most_expense.category_name }}
+            </h3>
+
+            <p>
+                ${{ most_expense.total_spend }}
+            </p>
+
+        {% else %}
+
+            <p>No expenses this week!</p>
+
+        {% endif %}
+
+    </div>
         <div class="start_expense_board">
             <p> How's your day?</p>
 
@@ -51,9 +80,6 @@
             <img src="/static/images/point_left.png" alt="" class="expense_link_icon">
             </a>
         </div>
-        
-        
-
     </div>
 </div>
 {% endblock %}
