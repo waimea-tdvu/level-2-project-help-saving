@@ -19,7 +19,7 @@ https://level-2-project-help-saving.onrender.com/
 
 ## Supporting Documents
 
-*For easier reading, the docs are hosted as a [GH pages site] https://github.com/waimea-tdvu/level-2-project-help-saving
+*For easier reading, the docs are hosted as a [GH pages site] (https://github.com/waimea-tdvu/level-2-project-help-saving)
 
 Task Instructions:
 - [Instruction documents](docs/instructions/)
