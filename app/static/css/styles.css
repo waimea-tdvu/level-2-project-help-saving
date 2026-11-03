@@ -9,7 +9,7 @@
     --back-col:         #eee;
     --back-col-panel:   #fff;
 
-    --border-col:       rgb(100, 214, 214);
+    --border-col:       black;
 
     --accent-col:       #e43;
 }
@@ -81,7 +81,7 @@ main > h2 {
 
     .note {
         padding: 1rem;
-        box-shadow: 0 0.5rem 1rem #0004;
+        box-shadow: 0 0.5rem 1rem var(--text-col);
         border: 1px solid var(--border-col);
         background-color: var(--back-col-panel);
 
@@ -108,7 +108,7 @@ main > h2 {
     text-align: center;
     font-size: 30px;
     line-height: 1.35;
-    color: black;
+    color: var(--text-col);
     margin: 0;
 }
 .dashboard {
@@ -180,7 +180,7 @@ main > h2 {
 }
     .expense-list th,
     .expense-list td{
-        border: 2px solid black;
+        border: 2px solid var(--border-col);
         padding: 10px;
         text-align: center;
     }
@@ -191,8 +191,8 @@ main > h2 {
     box-sizing: border-box;
     margin: auto;
     padding: 24px;
-    background: #ffffff;
-    border: 1px solid #d1d5db;
+    background: var(--back-col);
+    border: 1px solid var(--border-col);
     border-radius: 10px;
 }
 
@@ -209,7 +209,7 @@ main > h2 {
 
 .savings_table th,
 .savings_table td{
-        border: 2px solid black;
+        border: 2px solid var(--border-col);
         padding: 10px;
         text-align: left;
     }
@@ -224,7 +224,8 @@ main > h2 {
 
 .delete_list{
     padding: 10px 10px;
-    color: var(--accent-col);
+    background-color: var(--accent-col);
+    color: var(--back-col-panel);
     text-decoration: none;
     border-radius: 6px;
 }
@@ -241,22 +242,18 @@ main > h2 {
 .add-ex {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #ffffff;
-    color: #000000;
+    background-color: var(--back-col-panel);
+    color: var(--text-col) ;
     text-decoration: none;
     border-radius: 6px;
 }
 .back_feature_in_list {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #ffffff;
-    color: #000000;
+    background-color: var(--back-col-panel);
+    color: var(--text-col);
     text-decoration: none;
     border-radius: 6px;
-}
-.back_feature_in_list,
-.add-ex {
-background-color: var(--border-col);
 }
 
 /* Expense Form---------------------------------------------------------*/
@@ -281,7 +278,7 @@ background-color: var(--border-col);
 }
 .back_feature {
     padding: 10px 10px;
-    color: #000000;
+    color: var(--text-col);
     text-decoration: none;
     border-radius: 6px;
 }
@@ -293,7 +290,7 @@ background-color: var(--border-col);
     max-width: 90%;
     margin: 30px auto;
     padding: 25px;
-    background-color: var(--back-col-panel);
+    background-color: var(--back-col);
     border: 2px solid var(--border-col);
     border-radius: 12px;
 }
@@ -308,8 +305,32 @@ background-color: var(--border-col);
 }
 .target_board input {
     padding: 10px;
-    border: 1px solid #355;
+    border: 1px solid var(--border-col);
     border-radius: 6px;
 }
-.target_board button {
+.target_buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 15px;
+}
+.back-button,
+.save-button {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 16px;
+}
+.back-button {
+    background-color: var(--back-col-panel);
+    color: var(--text-col);
+    text-decoration: none;
+    border-radius: 1px solid var(--border-col);
+    box-sizing: border-box;
+}
+.save-button {
+    background-color: var(--accent-col);
+    color: var(--back-col);
+    border: none;
 }

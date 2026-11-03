@@ -25,11 +25,9 @@ app = Flask(__name__)
 #-----------------------------------------------------------
 @app.get("/")
 def show_menu(): 
+
     flash("Welcome to Savings Tracker")
-        # flash("Test SUCCESS message", "success")
-        # flash("Test INFO message", "info")
-        # flash("Test WARNING message", "warning")
-        # flash("Test ERROR message", "error")
+    
     with connect_db() as db:
         sql = """
             SELECT id, bank, current_savings, weekly_target,date_week_start

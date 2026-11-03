@@ -1,4 +1,6 @@
-# ... Project
+# Help Savings Project
+
+by Trinh Vu
 
 ## Project Description
 
@@ -10,12 +12,14 @@ The app has the following key features:
 - Feature three
 - ...
 
-## Live Site
+## Live Site 
 
 https://level-2-project-help-saving.onrender.com/
 
 
 ## Supporting Documents
+
+*For easier reading, the docs are hosted as a [GH pages site] https://github.com/waimea-tdvu/level-2-project-help-saving
 
 Task Instructions:
 - [Instruction documents](docs/instructions/)
@@ -27,21 +31,6 @@ Project Evidence
 - [Sprint 3: MVP Development](docs/evidence/sprint-3-mvp.md)
 - [Sprint 4: Final System Development](docs/evidence/sprint-4-final.md)
 - [Review: Project Final Review](docs/evidence/system-review.md)
-
-
-## Test Accounts
-
-The following user accounts have been created to demonstrate the features of the system:
-
-Test User 1:
-- Username: xxxxx
-- Password: xxxxx
-
-Test User 2:
-- Username: xxxxx
-- Password: xxxxx
-
-...
 
 
 ## Technologies Used
