@@ -145,7 +145,7 @@ main > h2 {
     object-fit: contain;
     margin-top: 10px;
 }
-.expense_board{
+.weekly_expense_board{
     background-color: var(--back-col-panel);
     border: 1px solid var(--border-col);
     border-radius: 10px;
