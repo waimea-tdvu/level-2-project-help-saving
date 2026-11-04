@@ -52,7 +52,7 @@ def show_menu():
         total_expense = db.execute(sql, params).fetchone()
 
 
-    return render_template("pages/savings_menu.jinja", savings=savings)
+    return render_template("pages/savings_menu.jinja", savings=savings, total_expense=total_expense)
 
 from datetime import date
 

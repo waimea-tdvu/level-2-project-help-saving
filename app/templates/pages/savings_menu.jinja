@@ -31,7 +31,7 @@
 
                     <a href="/target" class="set_target_link"> SET YOUR TARGET?</a>
         {% else %}
-        
+
             <h3>Set Your Target</h3>
             <p>You Haven't Start Yet!</p> 
 
@@ -47,25 +47,6 @@
         <h2>${{ total_expense.total_expense }}</h2>
 
         <hr>
-
-        <p>Most Expense</p>
-
-        {% if most_expense %}
-
-            <h3>
-                {{ most_expense.category_icon }}
-                {{ most_expense.category_name }}
-            </h3>
-
-            <p>
-                ${{ most_expense.total_spend }}
-            </p>
-
-        {% else %}
-
-            <p>No expenses this week!</p>
-
-        {% endif %}
 
     </div>
         <div class="start_expense_board">
