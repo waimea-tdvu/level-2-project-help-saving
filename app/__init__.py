@@ -6,6 +6,7 @@
 from flask import Flask, request, session, render_template, flash, redirect, send_file, make_response
 from werkzeug.security import generate_password_hash, check_password_hash
 from dotenv import load_dotenv
+from datetime import date, timedelta
 from os import getenv
 from io import BytesIO
 import html
@@ -30,8 +31,8 @@ def show_menu():
 
     # Get current week's Monday and Sunday
     today = date.today()
-    week_start = today - period(days=today.weekday())
-    week_end = week_start + period(days=6)
+    week_start = today - timedelta(days=today.weekday())
+    week_end = week_start + timedelta(days=6)
 
 
     with connect_db() as db:
@@ -53,8 +54,6 @@ def show_menu():
 
 
     return render_template("pages/savings_menu.jinja", savings=savings, total_expense=total_expense)
-
-from datetime import date
 
 @app.get("/expense/list")
 def show_expense_list():
@@ -175,4 +174,3 @@ init_date_filters(app)
 init_error_handlers(app)
 init_database()
 register_commands(app)
-
