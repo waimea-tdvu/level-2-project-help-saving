@@ -30,8 +30,8 @@ def show_menu():
 
     # Get current week's Monday and Sunday
     today = date.today()
-    week_start = today - timedelta(days=today.weekday())
-    week_end = week_start + timedelta(days=6)
+    week_start = today - period(days=today.weekday())
+    week_end = week_start + period(days=6)
 
 
     with connect_db() as db:
@@ -42,11 +42,11 @@ def show_menu():
         """
         savings = db.execute(sql).fetchall()
 
-    sql = """
-            SELECT COALESCE(SUM(spend), 0) AS total_expense
-            FROM expenses
-            WHERE date BETWEEN ? AND ?
-        """
+        sql = """
+                SELECT COALESCE(SUM(spend), 0) AS total_expense
+                FROM expenses
+                WHERE date BETWEEN ? AND ?
+            """
 
         params = (week_start.isoformat(), week_end.isoformat())
         total_expense = db.execute(sql, params).fetchone()

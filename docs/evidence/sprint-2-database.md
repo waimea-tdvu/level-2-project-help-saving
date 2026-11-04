@@ -3,23 +3,29 @@
 
 ## Sprint Goals
 
-Implement the database, populated with test data. Create queries that retrieve test data, and display this on web pages as needed. Test and refine the queries and data display, so that it stands as the basis of the next sprint.
+The goal of this sprint was to create the database for my Savings and Expense Tracker website, add test data and display the information on webpages.
 
 ### Specific Goals
 
 **Edit these goals as needed**
 
-- Implement the database
-- Add test data to the database
-- Create the following web pages:
-    - Home pages showing...
-    - Details page for ...
-    - Etc.
-- Develop SQL database queries to:
-    - Retrieve all ...
-    - Retrieve specific ...
-    - Etc.
+Create three database tables: savings, categories and expenses.
 
+Link the expenses table to the categories table using a foreign key.
+
+Add test data to all three tables.
+
+Create the homepage to display savings information and weekly expenses.
+Create an expense list page to display expense records.
+Create an expense form to allow users to add new expenses.
+Create a weekly target page to allow users to set their savings target.
+Write SQL queries to:
+Retrieve all savings information.
+Retrieve expenses with their category names and icons.
+Retrieve expenses from a selected date.
+Calculate the total expenses for the current week.
+Add, update and delete database records.
+Test the database queries and webpage displays.
 
 ## Testing FEATURE NAME HERE
 
