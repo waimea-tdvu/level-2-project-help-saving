@@ -27,7 +27,7 @@ app = Flask(__name__)
 def show_menu(): 
 
     flash("Welcome to Savings Tracker")
-
+    flash("Enddnd")
     # Get current week's Monday and Sunday
     today = date.today()
     week_start = today - period(days=today.weekday())

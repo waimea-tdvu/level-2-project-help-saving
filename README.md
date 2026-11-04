@@ -7,7 +7,7 @@ by Trinh Vu
 This is an app that ...
 
 The app has the following key features:
-- Feature one
+- Feature one nnn
 - Feature two
 - Feature three
 - ...
