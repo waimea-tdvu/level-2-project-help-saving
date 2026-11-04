@@ -118,12 +118,10 @@ main > h2 {
 }
 .dashboard_content {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     gap: 26px;
     margin-top: 10px;
-    flex-wrap: wrap;
 }
 .savings_board{
     background-color: var(--back-col-panel);
