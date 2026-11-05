@@ -128,9 +128,24 @@ main > h2 {
     border: 1px solid var(--border-col);
     border-radius: 10px;
     padding: 16px;
-    width: 220px;
+    width: 230px;
     box-sizing: border-box;
     text-align: center;
+}
+.budget_form {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.budget_form input {
+    width: 100px;
+    padding: 8px;
+    border-radius: 5px;
+}
+.budget_form button {
+    padding: 8px 12px;
 }
 .set_target_link {
     display: inline-flex;
@@ -150,7 +165,7 @@ main > h2 {
     border: 1px solid var(--border-col);
     border-radius: 10px;
     padding: 16px;
-    width: 220px;
+    width: 230px;
     box-sizing: border-box;
     text-align: center;
 }
@@ -159,7 +174,7 @@ main > h2 {
     border: 1px solid var(--border-col);
     border-radius: 10px;
     padding: 16px;
-    width: 220px;
+    width: 230px;
     box-sizing: border-box;
     text-align: center;
 }

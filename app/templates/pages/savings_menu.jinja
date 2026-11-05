@@ -21,14 +21,33 @@
     
                     <h3>Targeting</h3>
                 
-                    <p> Current balance: ${{ saving.current_savings }}</p>
+                    <p> Budget: ${{ saving.initial_budget }}</p>
 
-                    <p> Saved: ${{ saving.current_savings }}</p>
+                    <p> Start From: {{ week_start }}</p>
 
-                    <p>Saving target: ${{ saving.weekly_target }}</p>
+                    <p> Saved: ${{ current_savings }}</p>
+
+                    <p> Target: ${{ saving.weekly_target }}</p>
+                    
+                    <p>Progress: {{ saving_progress|round(1) }}%</p>
 
                     <img src="/static/images/smile_face.png" alt="Menu Image" class="menu_image">
 
+                    <form action="/budget/update" method="POST" class="budget_form">
+
+                        <label for="initial_budget">EDIT YOUR BUDGET ($):</label>
+
+                        <input
+                            type="text"
+                            id="initial_budget"
+                            name="initial_budget"
+                            placeholder="Type In"
+                            required
+                        >
+
+                        <button type="submit">SAVE</button>
+
+                    </form>
                     <a href="/target" class="set_target_link"> SET YOUR TARGET?</a>
         {% else %}
 
@@ -38,15 +57,15 @@
         {% endfor %}
 
     </div>
-            <div class="weekly_expense_board">
+        <div class="weekly_expense_board">
 
-        <h3>Weekly Expense</h3>
+            <h3>Weekly Expense</h3>
 
-        <p>Total Expense This Week</p>
+            <p>Total Expense This Week</p>
 
-        <h2>${{ total_expense.total_expense }}</h2>
+            <h2>${{ total_expense.total_expense }}</h2>
 
-        <hr>
+            <hr>
 
     </div>
         <div class="start_expense_board">

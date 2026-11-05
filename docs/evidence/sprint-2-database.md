@@ -9,69 +9,97 @@ The goal of this sprint was to create the database for my Savings and Expense Tr
 
 **Edit these goals as needed**
 
-Create three database tables: savings, categories and expenses.
+    Create three database tables: savings, categories and expenses.
 
-Link the expenses table to the categories table using a foreign key.
+    Connect the expenses table to the categories table using a foreign key.
 
-Add test data to all three tables.
+    Insert sample data into all three tables.
 
-Create the homepage to display savings information and weekly expenses.
-Create an expense list page to display expense records.
-Create an expense form to allow users to add new expenses.
-Create a weekly target page to allow users to set their savings target.
-Write SQL queries to:
-Retrieve all savings information.
-Retrieve expenses with their category names and icons.
-Retrieve expenses from a selected date.
-Calculate the total expenses for the current week.
-Add, update and delete database records.
-Test the database queries and webpage displays.
+    Display savings information and weekly expenses on the homepage.
 
-## Testing FEATURE NAME HERE
+    Create an expense list page with a date filter.
 
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
+    Create a form for users to add new expenses.
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
+    Create a page where users can set their weekly savings target.
 
-![Placeholder](screenshots/placeholder.png)
+    Write SQL queries to retrieve, insert, update and delete records.
 
-### Changes / Improvements
+    Test the database connections, SQL queries and webpage displays.
 
-Replace this text with notes any improvements you made as a result of the testing.
+## Testing Database Creation and Sample Data
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
+I tested whether the three database tables were created correctly and whether the sample data was inserted successfully.
 
+I checked the savings, categories and expenses tables to make sure that the records were stored correctly. I also checked the foreign key relationship between the expenses and categories tables.
 
-## Testing FEATURE NAME HERE
+The outcome:
+    The three database tables were created.
 
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
+    Sample savings information was inserted into the savings table.
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
+    Sample categories, including Food and Movie, were inserted into the categories table.
+
+    Sample expense records were inserted into the expenses table.
+
+    The category_id field connects each expense to its category.
+
+![Three database](screenshots/db.png)
 
 ### Changes / Improvements
 
-Replace this text with notes any improvements you made as a result of the testing.
+The database structure was created to organise savings, expense categories and expense records separately. A foreign key was added to connect expenses with their categories, making it possible to display the category name and icon with each expense.
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
+## Testing Homepage and Savings Information
 
+I tested the homepage to check whether the savings information from the database could be displayed on the website.
 
-## Testing FEATURE NAME HERE
+I checked whether the page displayed the current savings balance and weekly savings target. I also checked the weekly expense section.
 
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
+The outcome:
+    The homepage successfully retrieves savings records from the savings table.
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
+    The current savings balance and weekly target are displayed using database values.
+
+    The homepage layout includes a section for weekly expenses.
+
+    The weekly expense total still need further testing and improvement because the required data is not fully passed to the homepage template.
+
+![Home Page](screenshots/home.png)
 
 ### Changes / Improvements
 
-Replace this text with notes any improvements you made as a result of the testing.
+I identified that the homepage route needs to pass the weekly expense information to the template. This will allow the weekly expense section to display complete and accurate information.
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
+## Testing Expense List and Date Filter
+
+I tested the expense list page to check whether expense records could be retrieved from the database and displayed correctly.
+
+I also selected different dates to check whether the date filter showed only expenses recorded on the selected date.
+
+The outcome:
+    Expense records were retrieved from the expenses table.
+
+    The SQL JOIN query connected the expenses table with the categories table.
+
+    Category names and icons were displayed alongside the expense records.
+
+    The date filter allowed users to view expenses from a selected date.
 
 
-## ETC...
+![Expenses List](screenshots/ex_list.png)
 
+### Changes / Improvements
+
+The SQL JOIN query made the expense list more informative by displaying category names and icons instead of only category IDs. The date filter also made it easier for users to find expenses from a specific day.
+
+![Expense List Different Day](screenshots/ex_list_1.png)
 
 ## Sprint Review
 
-Replace this text with a statement about how the sprint has moved the project forward - key success point, any things that didn't go so well, etc.
+Sprint 2 successfully established the database and connected it to the main webpages. Sample data could be stored and displayed, and users could add expenses and update their weekly savings target.
+
+However, some homepage calculations and data displays still need improvement. These will be continued in the next sprint.
+
+Overall, Sprint 2 made the website more functional and provided a foundation for further development.
 

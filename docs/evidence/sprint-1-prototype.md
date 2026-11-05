@@ -47,7 +47,6 @@ Their available or starting amount of money.
 The system will display:
 
 The user's total spending for the week.
-The amount of money remaining.
 The amount saved.
 The user's weekly savings target.
 Progress towards the savings target.
@@ -56,11 +55,13 @@ A weekly summary at the end of the week.
 
 ### Required Data Processing
 
-total money = spending x amount
-total spending = sum of all expense amount
-money left = initial money - total spending
-money saved = money left
-savings progress = money saved compare to the weekly savings target
+total cost = cost per item x amount
+
+total weekly spending = sum of all expense cost within the selected week
+
+money saved = initial balance - total spending
+
+savings progress = (money saved/weekly savings target) x 100
 
 
 ## UI 'Flow'
@@ -85,26 +86,55 @@ The initial UI flow was tested by following the main user tasks step by step. Th
 -Adding clearer navigation between the home screen, expense screen, and weekly summary.
 -Showing the user's savings progress on the main screen.
 
-*IMPROVED FIGMA FLOW - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT*
-
-
 ## Initial UI Prototype
 
 The next stage of prototyping was to develop the layout for each screen of the UI.
 
 This Figma demo shows the initial layout design for the UI:
 
-*FIGMA PROTOTYPE - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT*
+This PenPot demo shows the initial design for the UI design:
 
+![UI design](screenshots/UI-design.png)
+
+You can acess the design [here](https://design.penpot.app/#/view?file-id=3be9e5e1-190f-8090-8008-705aa457ca4e&page-id=3be9e5e1-190f-8090-8008-705aa457ca4f&section=interactions&index=0&share-id=c269caa0-e456-818c-8008-88de1439d378)
 ### Testing
 
-Replace this text with notes about what you did to test the UI flow and the outcome of the testing.
+The initial UI prototype was reviewed by considering the main actions that users would perform.
+
+The testing focused on the layout, clarity of input fields, button placement and navigation between pages.
+
+The testing include:
+    Open the home page, the dashboard should be displayed
+
+    Select Expense Track, the expense list should open
+
+    Select Add Expenses, the expense form should open
+
+    Enter and save an expense, the new expense should be stored
+
+    Select a date, expenses for that date should be displayed
+
+    Select Delete, the selected expense should be removed
+
+    Open Set Target, the target-setting form should open
+
+    Save a weekly target, the target should be updated
+
+    Return to Home, the dashboard should be displayed
 
 ### Changes / Improvements
 
-Replace this text with notes any improvements you made as a result of the testing.
+Making the input fields more consistent across forms.
 
-*FIGMA IMPROVED PROTOTYPE - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT*
+Improving the spacing between buttons and form elements.
+
+Making important actions more noticeable.
+
+Keeping the layout consistent across all pages.
+
+Improving the visibility of expense information in the expense table.
+
+Ensuring that users can easily return to the dashboard.
 
 
 ## Refined UI Prototype
@@ -113,20 +143,44 @@ Having established the layout of the UI screens, the prototype was refined visua
 
 This Figma demo shows the UI with refinements applied:
 
-*FIGMA REFINED PROTOTYPE - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT*
+![ui refinements](screenshots/UI-design.png)
 
-### Testing
+You can acess the refinements [here](https://design.penpot.app/#/view?file-id=3be9e5e1-190f-8090-8008-705aa457ca4e&page-id=3be9e5e1-190f-8090-8008-705aa457ca4f&section=interactions&index=0&share-id=c269caa0-e456-818c-8008-88de1439d378)### Testing
 
-Replace this text with notes about what you did to test the UI flow and the outcome of the testing.
+The refined interface was reviewed to check whether the visual changes improved readability and consistency.
+
+This test focused on:
+    Whether text was easy to read.
+
+    Whether the colour contrast made important information noticeable.
+
+    Whether buttons and links were easy to identify.
+
+    Whether the different pages followed a consistent layout.
+
+    Whether the interface remained understandable when displaying financial information.
+
 
 ### Changes / Improvements
 
-Replace this text with notes any improvements you made as a result of the testing.
+The visual design was refined to create a more consistent experience across the application.
 
-*FIGMA IMPROVED REFINED PROTOTYPE - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT*
+The main improvements included:
 
+    Using a consistent colour palette throughout the pages.
+
+    Improving the alignment of dashboard content.
+
+    Using consistent borders and rounded corners.
+
+    Making important links and buttons easier to recognise.
+
+    Improving the organisation of information on the dashboard and forms.
 
 ## Sprint Review
 
-Replace this text with a statement about how the sprint has moved the project forward - key success point, any things that didn't go so well, etc.
+Sprint 1 successfully established the foundation for the Savings and Expense Tracker by creating a database structure and developing a user-friendly UI prototype. The main pages and navigation were designed to support expense tracking and weekly savings goals.
 
+However, some features, such as weekly summaries and savings progress calculations, still need further development.
+
+Overall, this sprint provided a solid foundation for Sprint 2, where the focus will be on improving functionality and completing the savings features.

@@ -4,13 +4,19 @@ by Trinh Vu
 
 ## Project Description
 
-This is an app that ...
+This is a web-based Savings and Expense Tracker application designed to help users manage their money, track daily expenses and achieve their weekly savings goals.
 
 The app has the following key features:
-- Feature one
-- Feature two
-- Feature three
-- ...
+
+    Savings Dashboard: Displays the initial budget, current savings, weekly savings target and weekly spending summary.
+
+    Expense Tracking: Allows users to record daily expenses by selecting a category, entering the amount, spending value and date.
+
+    Expense Management: Displays a list of expenses, allows users to filter expenses by date and delete unwanted records.
+
+    Weekly Savings Target: Allows users to set and update their weekly savings target and select the starting date of the week.
+
+    Automatic Calculations: Calculates total expenses for the selected week and updates the current savings balance based on recorded spending
 
 ## Live Site 
 

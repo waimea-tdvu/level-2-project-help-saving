@@ -22,7 +22,7 @@ class SavingsTable:
     SCHEMA = """
         CREATE TABLE savings (
             id      INTEGER PRIMARY KEY AUTOINCREMENT,
-            bank  INTEGER,
+            initial_budget  INTEGER,
             current_savings    INTEGER,
             weekly_target  INTEGER,
             date_week_start TEXT
@@ -30,7 +30,7 @@ class SavingsTable:
     """
 
     SEED_DATA = """
-        INSERT INTO savings ( id, bank, current_savings, weekly_target, date_week_start)
+        INSERT INTO savings ( id, initial_budget, current_savings, weekly_target, date_week_start)
         VALUES
             (1, 1000, 200, 250, "30-08-2026")
     """
